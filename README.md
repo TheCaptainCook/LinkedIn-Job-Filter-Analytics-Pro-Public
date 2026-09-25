@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="../assets/banner.png" alt="LinkedIn Job Filter & Analytics Pro Banner" width="100%">
-</p>
-
 # LinkedIn Job Filter & Analytics Pro
 
 <p align="center">

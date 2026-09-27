@@ -1,9 +1,13 @@
+<p align="center">
+  <img src="../assets/banner.png" alt="LinkedIn Job Filter & Analytics Pro Banner" width="100%">
+</p>
+
 # LinkedIn Job Filter & Analytics Pro
 
 <p align="center">
   <a href="https://developer.chrome.com/docs/extensions/mv3/intro/"><img src="https://img.shields.io/badge/Manifest-V3-orange.svg?style=flat-square" alt="Manifest Version"></a>
   <a href="https://chrome.google.com/webstore"><img src="https://img.shields.io/badge/Chrome-Extension-4285F4.svg?style=flat-square&logo=google-chrome&logoColor=white" alt="Chrome Extension"></a>
-  <img src="https://img.shields.io/badge/version-1.2.6-blue.svg?style=flat-square" alt="Version 1.2.6">
+  <img src="https://img.shields.io/badge/version-1.3.2-blue.svg?style=flat-square" alt="Version 1.3.2">
   <a href="../LICENSE"><img src="https://img.shields.io/badge/License-MIT%20%2B%20Indemnification-blue.svg?style=flat-square" alt="License: MIT with Indemnification Shield"></a>
   <img src="https://img.shields.io/badge/Pure-JavaScript%20(No%20Dependencies)-blueviolet.svg?style=flat-square" alt="Zero Dependencies">
   <img src="https://img.shields.io/badge/Privacy-100%25%20Local%20Processing-brightgreen.svg?style=flat-square" alt="100% Local">
@@ -18,6 +22,7 @@ A powerful, user-friendly Chrome extension designed to declutter, streamline, an
 - [✨ Why You'll Love It](#-why-youll-love-it)
 - [🚀 Key Features](#-key-features)
   - [🔍 Smart Filtering & Custom Rules](#-smart-filtering--custom-rules)
+  - [⚡ Dynamic LinkedIn Search Filters](#-dynamic-linkedin-search-filters)
   - [📝 Applied Jobs Tracker](#-applied-jobs-tracker)
   - [📊 Floating Job Insights Widget (HUD)](#-floating-job-insights-widget-hud)
   - [📈 Search Analytics & Activity Trends](#-search-analytics--activity-trends)
@@ -61,6 +66,9 @@ Searching for jobs online can quickly become overwhelming. Job feeds are often f
   - **Company Name Only** — Specifically targets or hides specific employers.
 - **Negative Keywords (Exclusions / NOT Logic)** — Refine rules to prevent unwanted matches (e.g., match *"Python"* but exclude *"Senior"* or *"Manager"*).
 - **Smart Word-Boundary Matching** — Intelligent matching engine avoids false positives (e.g., searching for *"intern"* matches *"Software Intern"*, but never *"International"*).
+- **Accent & Diacritic Tolerance** — Diacritic-insensitive matching ensures rules for keywords like *L'Oreal* match *L'Oréal*, *Nestle* matches *Nestlé*, *Credit Agricole* matches *Crédit Agricole*, and *Ingenieur* matches *Ingénieur*.
+- **Flexible Punctuation & Spacing** — Seamless matching across spaces, hyphens, and slashes (e.g. *Front End* matches *Front-End*, *Full Stack* matches *Fullstack*, and *UI/UX* matches *UI / UX*).
+- **Rock-Solid Execution & Stability** — High-performance matching engine tested against infinite recursion and call stack limits, ensuring ultra-smooth scrolling on lengthy LinkedIn job search feeds.
 - **Synonym Suggestions** — Get smart chip suggestions as you type keywords (e.g., typing *"React"* suggests `+ ReactJS`, `+ React.js`; typing *"Node"* suggests `+ NodeJS`).
 - **Live Rule Tester** — Test your custom rules against sample job text in real time before saving.
 - **Rule Hierarchy & Drag-and-Drop** — Reorder rules easily. Hide rules take precedence over highlights to ensure your feed stays clean.
@@ -68,9 +76,25 @@ Searching for jobs online can quickly become overwhelming. Job feeds are often f
 
 ---
 
+### ⚡ Dynamic LinkedIn Search Filters
+- **Two-Page Sliding Popup Experience** — Smoothly swipe or click tabs between the main extension controls and the new dedicated **Dynamic Filters** pane.
+- **Native Parameter-Level Refinements** — Fine-tune your LinkedIn searches directly from the extension popup with standard LinkedIn filters:
+  - **Date Posted** — Any Time, Past Month, Past Week, or Past 24 Hours.
+  - **Experience Level** — Multi-select Internship, Entry level, Associate, Mid-Senior level, Director, Executive.
+  - **Job Type** — Full-time, Part-time, Contract, Temporary, Volunteer, Internship.
+  - **Workplace Type** — On-site, Hybrid, Remote.
+  - **Application Types** — Easy Apply filter and Under 10 Applicants filter.
+- **One-Click Instant Apply** — Select your preferred search criteria and click **Apply Filters** to immediately update your active LinkedIn job search tab.
+- **Session-Based or Persistent Memory** — By default, filters apply to your current search session and reset when the window closes to keep things fresh. Need your filters saved permanently across browser restarts? Enable the **Persistent Dynamic Filters** toggle in Extension Settings!
+
+---
+
 ### 📝 Applied Jobs Tracker
 - **Automatic Click Detection** — Automatically detects when you click LinkedIn's "Apply" or "Easy Apply" buttons and records the job in your tracker.
-- **"Follow Company" Auto-Unchecker** — Automatically unchecks the "Follow company" box when submitting Easy Apply applications, keeping your LinkedIn feed clean.
+- **Easy Apply Automations & Smart Helpers**:
+  - **Auto-Uncheck "Follow Company"** — Automatically unticks the "Follow company to stay up to date with their page" checkbox when submitting Easy Apply applications, keeping your profile clean.
+  - **Auto-Click "Not now" on Post-Application Dialog** — Automatically dismisses the post-application "Next best action" popup (*"Turn your resume into a profile that recruiters notice"*) by clicking "Not now" immediately upon submission.
+  - **Full User Control** — Each automation can be toggled on or off independently in Extension Settings.
 - **Undo Countdown Notification** — A friendly floating notification appears when you apply, giving you a chance to cancel or undo before saving.
 - **Dedicated Application Dashboard** — Search, filter, and review all your applied jobs in a clean, responsive table.
 - **Status Lifecycle Tracking** — Organize your applications across 5 stages: *Applied*, *Reviewing*, *Interviewing*, *Rejected*, and *Offered*.
@@ -84,7 +108,7 @@ Searching for jobs online can quickly become overwhelming. Job feeds are often f
 ### 📊 Floating Job Insights Widget (HUD)
 - **Sleek Floating Overlay** — A modern, compact widget that appears alongside job details to give you immediate insights without getting in your way.
 - **Live Applicant Numbers & Competition Gauge** — Shows real-time applicant counts with dynamic competition ratings (*Low*, *Medium*, *High*, *Very High*).
-- **Clear Experience Requirements** — Automatically scans job descriptions to extract required and preferred experience levels (e.g., *6 months*, *1–2 years*, *5+ years*).
+- **Clear Experience Requirements** — Automatically scans job descriptions to extract required and preferred experience levels (e.g., *6 months*, *1–2 years*, *5+ years*), while cleanly ignoring company age or background history (e.g., *"Over 20 years in ad tech"*).
 - **Salary Transparency** — Detects and highlights disclosed compensation ranges (e.g., *$120K – $150K/yr*, *Hourly*).
 - **Ghost Job & Stale Listing Warnings** — Identifies listings older than 30 days or repeatedly reposted jobs, helping you avoid wasting time on inactive openings.
 - **Workplace Type Badges** — Clearly displays whether a role is *Remote*, *Hybrid*, or *On-site*.
@@ -94,7 +118,7 @@ Searching for jobs online can quickly become overwhelming. Job feeds are often f
 
 ### 📈 Search Analytics & Activity Trends
 - **Overview KPI Cards** — See how many listings you've reviewed, hidden, highlighted, and applied to today and throughout your job search.
-- **Interactive Visual Charts** — Explore your search and application trends using smooth line graphs, translucent area charts, activity heatmaps, or bubble distribution views.
+- **Interactive Visual Charts** — Explore your search and application trends using smooth line graphs or translucent area charts.
 - **Timeframe Grouping** — View your progress by Day, Week, Month, or Year.
 - **Keyword Cloud** — Visual summary showing the skills and keywords that appear most frequently in your matching jobs.
 - **One-Click Chart Export** — Download high-resolution PNG images of your charts or export raw data to CSV for your own spreadsheets.
@@ -102,14 +126,17 @@ Searching for jobs online can quickly become overwhelming. Job feeds are often f
 ---
 
 ### 🎨 Modern Design & Custom Themes
+- **Centralized Design System** — Single master stylesheet (`styles/theme.css`) unifying colors, cards, and borders across all pages.
 - **4 Tailored Color Themes** — Easily switch between **Light**, **Dark**, **Midnight**, and **Ocean** themes.
 - **Instant Theme Switcher** — Toggle themes directly from the toolbar popup with a single click.
 - **Live Cross-Tab Sync** — Theme adjustments instantly apply across all open extension pages and tabs without reloading.
+- **Stationary Window Geometry** — Stable popup window dimensions with zero layout jumps or resizing when sliding between tabs.
 - **Clean Typography** — Designed with the modern, legible Inter font for a comfortable reading experience.
 
 ---
 
 ### ⚙️ Settings, Presets & Data Portability
+- **Starter Rule Presets** — Activate curated starter rules with one click (including presets to automatically hide previously **Viewed Jobs** and **Applied Jobs**, agency spam, and promoted roles).
 - **Complete Backup & Restore** — Export all your rules, settings, and application history into a single backup file and restore it whenever you need.
 - **Customizable Widget** — Adjust widget visibility and set its default starting position (*Top Right* or *Bottom Right*).
 - **Easy Apply Preferences** — Enable or disable the automatic unchecking of the "Follow company" box based on your personal preference.
@@ -129,7 +156,7 @@ Access all tools easily through the extension toolbar popup or the built-in side
 | Page | How to Access | What It's For |
 |---|---|---|
 | **Toolbar Popup** | Click extension icon in Chrome | Quick master switch, today's stats, theme toggle, and 1-click link to LinkedIn Jobs |
-| **Rules Dashboard** | Sidebar → Dashboard (`Alt+Shift+D`) | View, create, edit, search, and organize your filtering and highlight rules |
+| **Rules Dashboard** | Sidebar → Rules Dashboard (`Alt+Shift+D`) | View, create, edit, search, and organize your filtering and highlight rules |
 | **Applied Jobs** | Sidebar → Applied Jobs | Manage submitted applications, update interview statuses, add notes, and export |
 | **Statistics** | Sidebar → Statistics | Interactive charts, job hunt activity trends, and keyword frequency cloud |
 | **Settings** | Sidebar → Settings | Change themes, configure the floating widget, and backup or restore your data |

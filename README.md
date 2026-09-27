@@ -1,4 +1,4 @@
-# LinkedIn Job Filter & Analytics Pro
+# <p align="center"> LinkedIn Job Filter & Analytics Pro </p>
 
 <p align="center">
   <a href="https://developer.chrome.com/docs/extensions/mv3/intro/"><img src="https://img.shields.io/badge/Manifest-V3-orange.svg?style=flat-square" alt="Manifest Version"></a>
